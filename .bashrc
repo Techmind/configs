@@ -102,6 +102,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+function winvim { iconv -f windows-1251 -t utf8 $1  > temp.pm && vim temp.pm && rm temp.pm; };
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -113,4 +115,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-function winvim { iconv -f windows-1251 -t utf8 $1 | vim -; };
