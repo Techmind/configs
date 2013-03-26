@@ -102,7 +102,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-function winvim { iconv -f windows-1251 -t utf8 $1  > temp.pm && vim temp.pm && rm temp.pm; };
+function winvim { DATE=`date +%T` iconv -f windows-1251 -t utf8 $1  > "temp$DATE.pm" && vim "temp$DATE.pm" && rm "temp$DATE.pm"; };
+
+. bashrc_vars
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -114,4 +116,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
 
