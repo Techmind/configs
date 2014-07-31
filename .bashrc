@@ -104,7 +104,9 @@ fi
 
 function winvim { DATE=`date +%T` iconv -f windows-1251 -t utf8 $1  > "temp$DATE.pm" && vim "temp$DATE.pm" && rm "temp$DATE.pm"; };
 
-. bashrc_vars
+export PS1='\[\033[01;32m\]\u@`/bin/hostname -f`\[\033[01;34m\] \w $(__git_ps1 "(%s)") \$\[\033[00m\] '
+
+ .bashrc_vars
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -118,3 +120,8 @@ if ! shopt -oq posix; then
 fi
 
 
+export LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH=/usr/local/lib
+
+alias phpcf='/home/ibogunov/projects/utils/phpcf'
